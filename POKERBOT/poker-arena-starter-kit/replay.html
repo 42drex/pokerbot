@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Arena PokerKit replay — agent cmq3xmj3mp2m</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://unpkg.com/alpinejs@3.13.5/dist/cdn.min.js"></script>
+<style>
+  body { font-family: ui-sans-serif, system-ui, sans-serif; }
+  .card { display:inline-block; padding:2px 6px; margin:1px; border:1px solid #ccc;
+          border-radius:4px; font-family: ui-monospace, monospace; }
+  .card.red { color:#dc2626; }
+  .pos { font-size:0.75rem; color:#6b7280; }
+  pre.reason { white-space:pre-wrap; word-break:break-word; font-size:0.75rem;
+              background:#f3f4f6; padding:6px 8px; border-radius:4px; }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+<div x-data='replayApp()' x-init='init()' class="max-w-4xl mx-auto p-6">
+  <header class="mb-6">
+    <h1 class="text-2xl font-bold">Arena PokerKit — Replay</h1>
+    <p class="text-sm text-slate-500" x-text="header"></p>
+  </header>
+
+  <template x-if="hands.length === 0 && submissions.length === 0">
+    <div class="rounded border border-amber-200 bg-amber-50 p-4 text-amber-900">
+      <p class="font-semibold">No hands yet.</p>
+      <p class="text-sm">Run <code>pokerkit run --max-hands 5</code> first, then re-run <code>pokerkit replay --latest</code>.</p>
+    </div>
+  </template>
+
+  <template x-if="hands.length > 0">
+    <section class="mb-8">
+      <h2 class="font-semibold mb-3">Settled hands (replayUrl available)</h2>
+      <div class="space-y-3">
+        <template x-for="(h, i) in hands" :key="h.handId">
+          <div class="rounded border border-slate-200 bg-white p-4">
+            <div class="flex justify-between items-baseline">
+              <span class="font-mono text-sm" x-text="`#${i+1} · ${h.handId.slice(0,12)}…`"></span>
+              <span class="text-sm" :class="(h.chipDelta||0)>=0?'text-emerald-600':'text-rose-600'">
+                Δ <span x-text="h.chipDelta||0"></span>
+              </span>
+            </div>
+            <div class="text-sm mt-1">
+              <span class="text-slate-500">winner:</span>
+              <span x-text="h.winnerHandle||'-'"></span>
+              <span class="text-slate-500 ml-3">settled:</span>
+              <span x-text="new Date(h.settledAt).toLocaleString()"></span>
+            </div>
+            <a class="text-xs text-blue-600 underline" :href="h.replayUrl" x-text="h.replayUrl" target="_blank" rel="noopener"></a>
+          </div>
+        </template>
+      </div>
+    </section>
+  </template>
+
+  <template x-if="submissions.length > 0">
+    <section>
+      <h2 class="font-semibold mb-3">Per-hand submissions
+        <span class="text-xs font-normal text-slate-500" x-text="`(${submissions.length} entries)`"></span>
+      </h2>
+      <div class="space-y-3">
+        <template x-for="(s, i) in submissions" :key="s.id">
+          <div class="rounded border border-slate-200 bg-white p-4">
+            <div class="flex justify-between items-baseline">
+              <div>
+                <span class="font-mono text-sm" x-text="`#${i+1} · ${(s.id||'').slice(0,12)}…`"></span>
+                <span class="pos ml-2" x-text="s.status"></span>
+              </div>
+              <span class="text-sm" :class="(s.data?.payoutChips||0) >= (s.data?.totalCommittedChips||0)?'text-emerald-600':'text-rose-600'">
+                payout <span x-text="s.data?.payoutChips ?? '-'"></span>
+              </span>
+            </div>
+            <div class="mt-2">
+              <span class="text-xs uppercase text-slate-500 mr-2">hole</span>
+              <template x-for="c in (s.data?.holeCards || [])" :key="c">
+                <span class="card" :class="isRed(c)?'red':''" x-text="c"></span>
+              </template>
+            </div>
+            <div class="mt-1 text-sm">
+              <span class="text-slate-500">seat</span>
+              <span class="ml-1" x-text="s.data?.seatNumber ?? '-'"></span>
+              <span class="text-slate-500 ml-3">stack</span>
+              <span class="ml-1" x-text="s.data?.stackChips ?? '-'"></span>
+              <span class="text-slate-500 ml-3">score</span>
+              <span class="ml-1" x-text="s.score ?? '-'"></span>
+            </div>
+            <template x-if="s.data?.reasoning">
+              <pre class="reason mt-2" x-text="s.data.reasoning"></pre>
+            </template>
+            <div class="mt-1 text-xs text-slate-400" x-text="new Date(s.submittedAt).toLocaleString()"></div>
+          </div>
+        </template>
+      </div>
+    </section>
+  </template>
+</div>
+
+<script>
+const PAYLOAD = {"hands": [], "submissions": [], "agentId": "cmq3xmj3mp2m313s0ei3dl7ht", "competitionId": "(latest)"};
+function replayApp() {
+  return {
+    hands: PAYLOAD.hands,
+    submissions: PAYLOAD.submissions,
+    header: "",
+    init() {
+      this.header = `agent ${PAYLOAD.agentId} · competition ${PAYLOAD.competitionId} · ${this.hands.length} settled hands, ${this.submissions.length} submissions`;
+    },
+    isRed(c) { return c && (c.endsWith('h') || c.endsWith('d') || c.endsWith('H') || c.endsWith('D')); }
+  };
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+{
+  "BTN_vs_CO": {
+    "hero_pos": "BTN",
+    "villain_pos": "CO",
+    "hero_equity": 0.4422,
+    "villain_equity": 0.5578,
+    "tie_rate": 0.0417
+  },
+  "BTN_vs_HJ": {
+    "hero_pos": "BTN",
+    "villain_pos": "HJ",
+    "hero_equity": 0.4222,
+    "villain_equity": 0.5778,
+    "tie_rate": 0.0337
+  },
+  "BTN_vs_UTG": {
+    "hero_pos": "BTN",
+    "villain_pos": "UTG",
+    "hero_equity": 0.3707,
+    "villain_equity": 0.6293,
+    "tie_rate": 0.036
+  },
+  "BTN_vs_BB": {
+    "hero_pos": "BTN",
+    "villain_pos": "BB",
+    "hero_equity": 0.5022,
+    "villain_equity": 0.4978,
+    "tie_rate": 0.0443
+  },
+  "BTN_vs_SB": {
+    "hero_pos": "BTN",
+    "villain_pos": "SB",
+    "hero_equity": 0.4885,
+    "villain_equity": 0.5115,
+    "tie_rate": 0.045
+  },
+  "CO_vs_BTN": {
+    "hero_pos": "CO",
+    "villain_pos": "BTN",
+    "hero_equity": 0.5595,
+    "villain_equity": 0.4405,
+    "tie_rate": 0.0423
+  },
+  "CO_vs_HJ": {
+    "hero_pos": "CO",
+    "villain_pos": "HJ",
+    "hero_equity": 0.4575,
+    "villain_equity": 0.5425,
+    "tie_rate": 0.039
+  },
+  "CO_vs_UTG": {
+    "hero_pos": "CO",
+    "villain_pos": "UTG",
+    "hero_equity": 0.442,
+    "villain_equity": 0.558,
+    "tie_rate": 0.0373
+  },
+  "CO_vs_BB": {
+    "hero_pos": "CO",
+    "villain_pos": "BB",
+    "hero_equity": 0.5745,
+    "villain_equity": 0.4255,
+    "tie_rate": 0.0343
+  },
+  "CO_vs_SB": {
+    "hero_pos": "CO",
+    "villain_pos": "SB",
+    "hero_equity": 0.5477,
+    "villain_equity": 0.4523,
+    "tie_rate": 0.042
+  },
+  "HJ_vs_BTN": {
+    "hero_pos": "HJ",
+    "villain_pos": "BTN",
+    "hero_equity": 0.5838,
+    "villain_equity": 0.4162,
+    "tie_rate": 0.029
+  },
+  "HJ_vs_CO": {
+    "hero_pos": "HJ",
+    "villain_pos": "CO",
+    "hero_equity": 0.551,
+    "villain_equity": 0.449,
+    "tie_rate": 0.0373
+  },
+  "HJ_vs_UTG": {
+    "hero_pos": "HJ",
+    "villain_pos": "UTG",
+    "hero_equity": 0.4712,
+    "villain_equity": 0.5288,
+    "tie_rate": 0.0657
+  },
+  "HJ_vs_BB": {
+    "hero_pos": "HJ",
+    "villain_pos": "BB",
+    "hero_equity": 0.6297,
+    "villain_equity": 0.3703,
+    "tie_rate": 0.028
+  },
+  "HJ_vs_SB": {
+    "hero_pos": "HJ",
+    "villain_pos": "SB",
+    "hero_equity": 0.6048,
+    "villain_equity": 0.3952,
+    "tie_rate": 0.033
+  },
+  "UTG_vs_BTN": {
+    "hero_pos": "UTG",
+    "villain_pos": "BTN",
+    "hero_equity": 0.609,
+    "villain_equity": 0.391,
+    "tie_rate": 0.0293
+  },
+  "UTG_vs_CO": {
+    "hero_pos": "UTG",
+    "villain_pos": "CO",
+    "hero_equity": 0.5673,
+    "villain_equity": 0.4327,
+    "tie_rate": 0.0487
+  },
+  "UTG_vs_HJ": {
+    "hero_pos": "UTG",
+    "villain_pos": "HJ",
+    "hero_equity": 0.5257,
+    "villain_equity": 0.4743,
+    "tie_rate": 0.0507
+  },
+  "UTG_vs_BB": {
+    "hero_pos": "UTG",
+    "villain_pos": "BB",
+    "hero_equity": 0.6258,
+    "villain_equity": 0.3742,
+    "tie_rate": 0.0257
+  },
+  "UTG_vs_SB": {
+    "hero_pos": "UTG",
+    "villain_pos": "SB",
+    "hero_equity": 0.612,
+    "villain_equity": 0.388,
+    "tie_rate": 0.0347
+  },
+  "BB_vs_BTN": {
+    "hero_pos": "BB",
+    "villain_pos": "BTN",
+    "hero_equity": 0.4883,
+    "villain_equity": 0.5117,
+    "tie_rate": 0.0407
+  },
+  "BB_vs_CO": {
+    "hero_pos": "BB",
+    "villain_pos": "CO",
+    "hero_equity": 0.4208,
+    "villain_equity": 0.5792,
+    "tie_rate": 0.0377
+  },
+  "BB_vs_HJ": {
+    "hero_pos": "BB",
+    "villain_pos": "HJ",
+    "hero_equity": 0.3835,
+    "villain_equity": 0.6165,
+    "tie_rate": 0.0257
+  },
+  "BB_vs_UTG": {
+    "hero_pos": "BB",
+    "villain_pos": "UTG",
+    "hero_equity": 0.3705,
+    "villain_equity": 0.6295,
+    "tie_rate": 0.029
+  },
+  "BB_vs_SB": {
+    "hero_pos": "BB",
+    "villain_pos": "SB",
+    "hero_equity": 0.4618,
+    "villain_equity": 0.5382,
+    "tie_rate": 0.0363
+  },
+  "SB_vs_BTN": {
+    "hero_pos": "SB",
+    "villain_pos": "BTN",
+    "hero_equity": 0.522,
+    "villain_equity": 0.478,
+    "tie_rate": 0.0447
+  },
+  "SB_vs_CO": {
+    "hero_pos": "SB",
+    "villain_pos": "CO",
+    "hero_equity": 0.4655,
+    "villain_equity": 0.5345,
+    "tie_rate": 0.0403
+  },
+  "SB_vs_HJ": {
+    "hero_pos": "SB",
+    "villain_pos": "HJ",
+    "hero_equity": 0.425,
+    "villain_equity": 0.575,
+    "tie_rate": 0.036
+  },
+  "SB_vs_UTG": {
+    "hero_pos": "SB",
+    "villain_pos": "UTG",
+    "hero_equity": 0.4018,
+    "villain_equity": 0.5982,
+    "tie_rate": 0.033
+  },
+  "SB_vs_BB": {
+    "hero_pos": "SB",
+    "villain_pos": "BB",
+    "hero_equity": 0.5422,
+    "villain_equity": 0.4578,
+    "tie_rate": 0.0343
+  }
+}
